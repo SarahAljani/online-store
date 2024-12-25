@@ -1,0 +1,45 @@
+{
+  "readMore": "read more",
+  "header": {
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "contactUs": "Contact Us"
+  },
+  "productPage": {
+    "category": "Category",
+    "availableColors": "Available Colors",
+    "price": "Price",
+    "rating": "Rating",
+    "addToCart": "Add To Cart"
+  },
+  "search": {
+    "title": "Search for products you need!",
+    "category": "Category",
+    "filter": "Filter",
+    "rating": "Rating",
+    "reset": "Reset Filter"
+  },
+  "cart": "Your cart",
+  "cartempty": "Your cart is currently empty :o",
+  "payment": {
+    "payment": "payment",
+    "cod": "Cash on Delivery (COD)",
+    "op": "Online Payment",
+    "choose": "Choose Payment Method:",
+    "onlineText": "Online payment options will appear here."
+  },
+  "total": "Total",
+  "product": {
+    "title": "Product Title",
+    "category": "Product Category",
+    "selectCategory": "Select a category",
+    "desc": "Product Description",
+    "price": "Product Price",
+    "image": "Product Image"
+  },
+  "buttons": {
+    "addProduct": "Add Product",
+    "updateProduct": "Update Product",
+    "backToDashboard": "Back To DashBoard"
+  }
+}

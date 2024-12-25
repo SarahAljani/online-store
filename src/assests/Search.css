@@ -1,0 +1,11 @@
+.search {
+  width: 40%;
+  margin: 50px 0;
+}
+.lable-search {
+  text-align: left;
+}
+.lable-search {
+  color: blue;
+  font-weight: bold;
+}

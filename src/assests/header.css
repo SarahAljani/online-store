@@ -1,0 +1,113 @@
+/* General header styling */
+header {
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #333333a2;
+  z-index: 1000;
+  padding: 0px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+
+/* Logo styles */
+h1 {
+  margin-left: 15px;
+
+  font-weight: 800;
+  font-size: 45px;
+  color: white;
+}
+
+/* Navbar styles */
+.navbar {
+  position: relative;
+}
+
+/* Navbar collapse styling for small screens */
+.navbar-collapse {
+  padding: 10px;
+  border-radius: 10px;
+  top: 60px; /* Position the navbar properly when expanded */
+}
+
+/* Nav links flex direction on small screens */
+@media (max-width: 991px) {
+  .navbar-nav {
+    position: absolute;
+    top: 50px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Row gap between nav links */
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .navbar-toggler {
+    color: white;
+  }
+  .me-auto {
+    background-color: rgba(7, 7, 7, 0.705);
+    border-radius: 10px;
+  }
+}
+
+/* Navbar for large screens */
+@media (min-width: 992px) {
+  .navbar-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .navbar {
+    top: 0px;
+  }
+}
+
+/* Link styling */
+.nav-link,
+.navbar-nav .dropdown-item {
+  display: inline-block;
+  color: #fff !important;
+  text-transform: uppercase;
+  letter-spacing: normal;
+  font-size: 14px;
+  font-weight: 800;
+  padding: 0 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover glow effect */
+.glow-effect {
+  color: blue !important;
+  text-shadow: 0 0 5px blue, 0 0 10px blue, 0 0 15px blue;
+}
+
+/* Navbar toggle button (hamburger) glow */
+.navbar-toggler.glow-effect {
+  color: blue !important;
+  text-shadow: 0 0 5px blue, 0 0 10px blue;
+}
+
+/* Icon glow effect */
+.icon-glow {
+  color: blue !important;
+  text-shadow: 0 0 5px blue, 0 0 10px blue;
+}
+
+/* GSAP animation target */
+.me-auto {
+  opacity: 1;
+}
+
+/* Logo size */
+.logoHeader {
+  width: 110px;
+  height: 100px;
+}

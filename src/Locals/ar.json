@@ -1,0 +1,45 @@
+{
+  "readMore": "إقرأ المزيد",
+  "header": {
+    "home": "الصفحة الرئيسية",
+    "dashboard": "لوحةالتحكم",
+    "contactUs": "تواصل معنا"
+  },
+  "productPage": {
+    "category": "التصنيف",
+    "availableColors": "الألوان المتاحة",
+    "price": "السعر",
+    "rating": "التقييم",
+    "addToCart": "إضافة إلى السلة"
+  },
+  "search": {
+    "title": "ابحث عن منتجات تريدها!",
+    "category": "التصنيف",
+    "filter": "فرز",
+    "rating": "التقييم",
+    "reset": "إعادة ضبط الفيلتر"
+  },
+  "cartempty": "سلتك الآن فارغة :0",
+  "cart": "سلتك",
+  "payment": {
+    "payment": "الدفع",
+    "cod": "الدفع كاش عند التسليم (COD)",
+    "op": "الدفع الإلكتروني",
+    "choose": "اختر طريقة طريقة الدفع:",
+    "onlineText": "خيارات دفع الكاش سوف تظهر هنا"
+  },
+  "total": "الإجمالي",
+  "product": {
+    "title": "اسم المنتج",
+    "category": "تصنيف المنتج",
+    "selectCategory": "اختر تصنيف",
+    "desc": "وصف المنتج",
+    "price": "سعر المنتج",
+    "image": "صورة المنتج"
+  },
+  "buttons": {
+    "addProduct": "إضافة منتج",
+    "updateProduct": "تحديث المنتج",
+    "backToDashboard": "العودة إلى لوحة التحكم"
+  }
+}

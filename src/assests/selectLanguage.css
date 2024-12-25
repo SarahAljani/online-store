@@ -1,0 +1,20 @@
+#demo-simple-select {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 35px;
+  padding: 4px;
+}
+#demo-simple-select:hover {
+  box-shadow: 0 0 5px blue, 0 0 10px blue, 0 0 15px blue;
+}
+#demo-simple-select:focus {
+  box-shadow: 0 0 5px blue, 0 0 10px blue, 0 0 15px blue;
+}
+.lan {
+  height: 30px !important;
+  padding: 0;
+}
+#demo-simple-select-label {
+  border: none;
+}

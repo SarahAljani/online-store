@@ -1,0 +1,21 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  justify-content: center;
+  align-items: center;
+}
+.group {
+  width: 100%;
+}
+.control {
+  border: 1px solid blue;
+}
+.control:focus {
+  box-shadow: 2px 1px 2px 3px blue63, -2px -1px 2px 3px blue38;
+  border: 1px solid blue93;
+  transition: all 0.35s ease-in-out;
+}
+.label {
+  color: blue;
+}
