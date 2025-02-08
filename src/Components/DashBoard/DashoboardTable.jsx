@@ -10,10 +10,11 @@ import "../../assests/dashboardTable.css";
 
 const DashoboardTable = () => {
   const [show, setShow] = useState(false);
+  const [idproduct, setIdproduct] = useState();
   const products = useSelector((state) => state.products.products);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [idproduct, setIdproduct] = useState();
+
   const style = {
     fontWeight: "800",
     fontSize: "18px",

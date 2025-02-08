@@ -3,13 +3,131 @@
   padding: 0;
   box-sizing: border-box;
 }
+.categories-images {
+  width: 100%;
+  height: 100%; /* Ensure it fills the container */
+  object-fit: cover; /* Crop to fill while maintaining aspect ratio */
+  object-position: center; /* Center the image */
+  z-index: -1;
+  position: relative;
+}
+.slids::after {
+  content: "";
+  height: 100%;
+  width: 40%;
+  background-color: rgba(3, 3, 3, 0.795);
+  z-index: 3;
+  position: absolute;
+  border-radius: 0px 70% 0px 70%;
+  left: 0;
+}
+.slids {
+  position: relative;
+}
+.but {
+  position: absolute;
+  width: 100px;
+  left: 12%;
+  top: 65%;
+  z-index: 7;
+  border: none;
+  font-weight: 500;
+  background-color: blue;
+  color: white;
+}
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 150px 0;
+  column-gap: 8px;
+}
+.square {
+  width: 6px;
+  height: 6px;
+  background-color: rgb(22, 0, 150);
+  transform: rotate(45deg);
+}
+
+.m_eae68602:where([data-active]) {
+  width: 40px !important;
+}
+.square1 {
+  width: 8px;
+  height: 8px;
+  background-color: rgb(86, 75, 151);
+  transform: rotate(45deg);
+}
+.square2 {
+  width: 10px;
+  height: 10px;
+  background-color: rgb(155, 155, 155);
+  transform: rotate(45deg);
+}
+hr.style-seven {
+  width: 35%;
+}
+.moon {
+  width: 25px;
+  height: 25px;
+  background-color: rgb(255, 255, 255);
+  border: 6px double rgb(155, 155, 155);
+  /* transform: rotate(40deg); */
+}
+.moon-arc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5%;
+  height: 30px;
+  border-style: double;
+  border-color: rgb(22, 0, 150);
+  border-width: 0 9px 0 9px;
+  transform: rotate(45deg);
+}
+/* hr.style-seven {
+    overflow: visible; 
+    height: 30px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+}
+hr.style-seven:before { 
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
+} */
+.offer {
+  position: absolute;
+  width: 100px;
+  left: 12%;
+  top: 30%;
+  z-index: 8;
+  /* background-color: white;
+  color: black; */
+  color: white;
+  border: none;
+  font-weight: 900;
+  font-size: 35px;
+}
+.but:hover {
+  background-color: white;
+  color: black;
+}
 .products {
   width: 100%;
   height: 70%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 5px;
 }
 .product {
   position: relative;
@@ -69,13 +187,19 @@
 .buy {
   padding: 8px 8px;
   border-radius: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .buy Button {
-  height: 40px;
-  width: 40px;
+  height: 5px;
+  width: 5px;
   padding: 10px 20px;
   border: none;
   background-color: rgb(177, 177, 177);
+}
+.btn-primary:hover {
+  background-color: rgb(0, 0, 116) !important;
 }
 .stars {
   display: flex;
@@ -106,6 +230,11 @@
   font-style: italic;
   color: blue;
   border: none;
+  font-weight: 600;
+}
+.read:hover {
+  color: rgb(0, 0, 0);
+  background-color: transparent !important;
 }
 .desc_buy {
   display: flex;

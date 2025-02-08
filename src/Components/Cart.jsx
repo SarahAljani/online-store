@@ -1,37 +1,35 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  deleteProduct,
-  incrementProduct,
-  DEcrementProduct,
-} from "../redux/actions/actions/cartActions";
 import "../assests/cart.css";
 import { RiDeleteBin4Fill } from "react-icons/ri";
 import { Button } from "react-bootstrap";
 import Payment from "./Payment";
 import { useTranslation } from "react-i18next";
+import {
+  decrementProductQuantity,
+  deleteProduct,
+  incrementProductQuantity,
+} from "../redux/reducers/cartSlice";
+
 const Cart = () => {
-  const cartItems = useSelector((state) => state.cart.products);
+  const cartItems = useSelector((state) => state.cart.cartProducts);
   const dispatch = useDispatch();
-  const [total, setTotal] = useState(
-    cartItems.reduce((acc, e) => acc + e.price * e.number, 0)
-  );
-  const { t, i18n } = useTranslation();
-  useEffect(() => {}, [dispatch]);
+  const { t } = useTranslation();
+  const total = cartItems.reduce((acc, e) => acc + e.price * e.number, 0);
 
-  const handleIncrement = (index, price) => {
-    dispatch(incrementProduct(index));
-    setTotal((prevTotal) => prevTotal + price);
+  const handleIncrement = (id) => {
+    dispatch(incrementProductQuantity(id));
   };
 
-  const handleDecrement = (index, price) => {
-    dispatch(DEcrementProduct(index));
-    setTotal((prevTotal) => prevTotal - price);
+  const handleDecrement = (id) => {
+    const item = cartItems.find((prod) => prod.id === id);
+    if (item.number > 1) {
+      dispatch(decrementProductQuantity(id));
+    }
   };
 
-  const handleDelete = (index, price, number) => {
-    dispatch(deleteProduct(index));
-    setTotal((prevTotal) => prevTotal - price * number);
+  const handleDelete = (id) => {
+    dispatch(deleteProduct(id));
   };
 
   return (
@@ -48,7 +46,7 @@ const Cart = () => {
           >
             {t("cart")}:
           </h3>
-          {cartItems.map((item, index) => (
+          {cartItems.map((item) => (
             <div className="cartItem" key={item.id}>
               <div className="imageContainer">
                 <img
@@ -65,19 +63,20 @@ const Cart = () => {
                 </p>
               </div>
               <div className="price">
-                <p>${item.price}</p>
+                ${item.price}
               </div>
+
               {/* Counter Section */}
               <div className="counter">
                 <Button
-                  onClick={() => handleDecrement(index, item.price)}
+                  onClick={() => handleDecrement(item.id)}
                   className="indic"
                 >
                   -
                 </Button>
                 <span>{item.number}</span>
                 <Button
-                  onClick={() => handleIncrement(index, item.price)}
+                  onClick={() => handleIncrement(item.id)}
                   className="indic"
                 >
                   +
@@ -85,12 +84,20 @@ const Cart = () => {
               </div>
 
               {/* Delete Button */}
-              <button
-                onClick={() => handleDelete(index, item.price, item.number)}
+              <Button
                 className="delete-btn"
+                style={{
+                  backgroundColor: "transparent",
+                  margin: "0",
+                  padding: "0",
+                  border: "none",
+                }}
               >
-                <RiDeleteBin4Fill className="trash" />
-              </button>
+                <RiDeleteBin4Fill
+                  className="trash"
+                  onClick={() => handleDelete(item.id)}
+                />
+              </Button>
             </div>
           ))}
           <hr />

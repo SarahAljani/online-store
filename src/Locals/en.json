@@ -10,7 +10,8 @@
     "availableColors": "Available Colors",
     "price": "Price",
     "rating": "Rating",
-    "addToCart": "Add To Cart"
+    "addToCart": "Add To Cart",
+    "removeFromCart": "Remove from Cart"
   },
   "search": {
     "title": "Search for products you need!",

@@ -54,7 +54,8 @@
   flex-direction: column;
   align-items: start;
 }
-.details {
+.price {
+  font-size: 18px;
 }
 .details .cardtitle {
   font-size: 15px;
@@ -86,16 +87,19 @@
   display: flex;
   justify-content: space-around;
   color: #707070;
+  align-items: center;
+}
+.counter Button:hover {
+  background-color: #1f1f1f !important;
 }
 .price {
   color: #707070;
   font-weight: 800;
 }
 .payment {
-  width: 30%;
+  width: 35%;
   height: 100vh;
   background-color: rgb(59, 59, 59);
-  padding: 30px 30px;
 }
 .total-price {
   display: flex;
@@ -117,18 +121,16 @@ hr {
   flex-direction: column;
   align-items: start;
   justify-content: space-around;
+  width: 100%;
+  margin: 0 20px;
+  color: #fff;
+  margin-top: 20px;
 }
 .radiopay2:nth-child(1),
 .radiopay2:nth-child(2) {
   width: 100px;
 }
-.pay {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  color: #fff;
-}
+
 .radiopay2 {
   font-size: 20px;
   width: 100px;
@@ -139,6 +141,7 @@ hr {
 .f {
   margin: 0;
 }
+
 .empty-cart {
   width: 70%;
 }
@@ -146,4 +149,24 @@ hr {
   width: 150px;
   height: auto;
   margin: 20px 0;
+}
+.cartItem .delete-btn:hover {
+  background-color: transparent !important;
+}
+.delete-btn:hover .trash {
+  color: #1f1f1f;
+}
+.css-19qnlrw-MuiFormLabel-root-MuiInputLabel-root {
+  color: #dadada !important;
+  font-weight: 500 !important;
+}
+/* .MuiRadio-label css-pfaso8-JoyRadio-label {
+  display: flex !important;
+  justify-content: center !important;
+} */
+.css-59j0dg-JoyRadio-label {
+  color: #fff !important;
+}
+.css-19lx28m-MuiFormControlLabel-root {
+  margin: 0 !important;
 }

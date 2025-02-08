@@ -1,9 +1,38 @@
+.css-1ll44ll-MuiOutlinedInput-notchedOutline:hover {
+  border: none !important;
+  outline: none;
+}
+.css-1ll44ll-MuiOutlinedInput-notchedOutline {
+  border: 1px solid blue !important;
+  outline: none;
+}
+.MuiSvgIcon-root
+  MuiSvgIcon-fontSizeMedium
+  MuiSelect-icon
+  MuiSelect-iconOutlined
+  css-lohd6h-MuiSvgIcon-root-MuiSelect-icon {
+  margin-left: 10px;
+  padding-left: 10px;
+}
 #demo-simple-select {
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 35px;
   padding: 4px;
+  border: none;
+  outline: none;
+}
+
+.MuiOutlinedInput-notchedOutline css-1ll44ll-MuiOutlinedInput-notchedOutline {
+  padding: 0px;
+}
+.MuiSelect-select
+  MuiSelect-outlined
+  MuiInputBase-input
+  MuiOutlinedInput-input
+  css-w76bbz-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+  padding: 0px !important;
 }
 #demo-simple-select:hover {
   box-shadow: 0 0 5px blue, 0 0 10px blue, 0 0 15px blue;

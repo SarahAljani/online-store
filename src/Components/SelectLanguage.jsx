@@ -6,11 +6,13 @@ import Select from "@mui/material/Select";
 import { Language } from "@mui/icons-material";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import uae from "../assests/uae.png";
 import "../assests/selectLanguage.css";
+import britain from "../assests/britain.png";
 export default function SelectLanguage() {
   const { i18n } = useTranslation();
   console.log(i18n);
-  const [language, setLanguage] = useState("en");
+  const [language, setLanguage] = useState(localStorage.getItem("language"));
 
   const handleChange = (event) => {
     const newLanguage = event.target.value;
@@ -23,17 +25,28 @@ export default function SelectLanguage() {
   };
 
   return (
-    <FormControl sx={{ width: "80px " }} className="lan">
-      <InputLabel id="demo-simple-select-label">{language}</InputLabel>
+    <FormControl sx={{ width: "70px ", marginTop: "-9px" }} className="lan">
+      {/* <InputLabel id="demo-simple-select-label">
+        {language === "En" ? (
+      
+        ) : (
+          <></>
+        )}
+      </InputLabel> */}
       <Select
-        labelId="demo-simple-select-label"
+        // labelId="demo-simple-select-label"
         id="demo-simple-select"
         defaultValue={language}
-        label={language}
+        // label={language}
         onChange={handleChange}
+        style={{ border: "none" }}
       >
-        <MenuItem value="en">En</MenuItem>
-        <MenuItem value="ar">Ar</MenuItem>
+        <MenuItem value="en">
+          <img src={britain} alt="britain" style={{ marginRight: "12px" }} />
+        </MenuItem>
+        <MenuItem value="ar">
+          <img src={uae} alt="uae" style={{ marginRight: "12px" }} />
+        </MenuItem>
       </Select>
     </FormControl>
   );

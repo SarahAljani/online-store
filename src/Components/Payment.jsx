@@ -10,33 +10,99 @@ import { RiVisaFill } from "react-icons/ri";
 import "../assests/cart.css";
 import { Button } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
+import { FormControlLabel } from "@mui/material";
+import { persistor } from "../redux/store";
 
 const Payment = () => {
   const [paymentMethod, setPaymentMethod] = React.useState("cod");
   const [justify, setJustify] = React.useState("flex-start");
 
-const handlePaymentMethodChange = (event) => {
-  console.log("Selected value:", event.target.value);
-  setPaymentMethod(event.target.value);
-};
+  const handlePaymentMethodChange = (event) => {
+    console.log("Selected value:", event.target.value);
+    setPaymentMethod(event.target.value);
+  };
   const { t } = useTranslation();
   return (
     <div className="pay">
-      <h3 style={{ fontWeight: "600", fontSize: "24px", marginBottom: "30px" }}>
+      <h3
+        style={{
+          fontWeight: "600",
+          fontSize: "20px",
+          marginBottom: "10px",
+          padding: "0px",
+        }}
+      >
         {t("payment.payment")}
       </h3>
-      <FormControl>
+      <FormControl
+        style={{
+          marginBottom: "20px",
+          width: "100%",
+        }}
+      >
         <RadioGroup
-          value={paymentMethod} 
+          value={paymentMethod}
           name="payment-method"
           onChange={handlePaymentMethodChange}
           className="radiopay1"
+          sx={{ display: "flex", flexDirection: "column", rowGap: "5px" }}
         >
-          <Radio value="cod" label={t("payment.cod")} color={"primary"} />
-          <Radio value="op" label={t("payment.op")} color={"primary"} />
+          <FormControlLabel
+            control={<Radio />}
+            value="cod"
+            label={t("payment.cod")}
+            color={"primary"}
+            sx={{
+              "& .MuiFormControlLabel-label": {
+                color: "#ffffff", // or another visible color
+                fontWeight: "normal",
+                fontFamily: "inherit",
+              },
+              display: "flex",
+              columnGap: "10px",
+              margin: "0px",
+            }}
+          />
+          <FormControlLabel
+            control={<Radio sx={{}} />}
+            value="op"
+            label={t("payment.op")}
+            color={"primary"}
+            sx={{
+              "& .MuiFormControlLabel-label": {
+                color: "#ffffff", // or another visible color
+                fontWeight: "normal",
+                fontFamily: "inherit",
+              },
+              display: "flex",
+              columnGap: "10px",
+              margin: "0px",
+            }}
+          />
         </RadioGroup>
       </FormControl>
-
+      {/* <Box style={{ width: "100%" }}>
+        <RadioGroup
+          aria-labelledby="demo-controlled-radio-buttons-group"
+          name="controlled-radio-buttons-group"
+          value={paymentMethod}
+          onChange={handlePaymentMethodChange}
+        >
+          <FormControlLabel
+            value="cod"
+            label={t("payment.cod")}
+            control={<Radio />}
+            sx={{
+              width: "100%",
+            }}
+          />
+          <FormControlLabel
+            control={<Radio />}
+            value="op"
+            label={t("payment.op")}
+          />
+        </RadioGroup>
+      </Box> */}
       {paymentMethod === "cod" && (
         <Box
           sx={{
@@ -49,7 +115,12 @@ const handlePaymentMethodChange = (event) => {
         >
           <Typography
             id="segmented-controls-example"
-            sx={{ fontWeight: "lg", fontSize: "sm" }}
+            sx={{
+              fontWeight: "bold",
+              fontSize: "lg",
+              color: "#ffffff !important",
+              marginBottom: "30px 0 !important",
+            }}
           >
             {t("payment.choose")}
           </Typography>
@@ -66,6 +137,8 @@ const handlePaymentMethodChange = (event) => {
               bgcolor: "neutral.softBg",
               "--RadioGroup-gap": "4px",
               "--Radio-actionRadius": "8px",
+              display: "flex",
+              justifyContent: "center",
             }}
             className="paycard"
           >
@@ -86,7 +159,12 @@ const handlePaymentMethodChange = (event) => {
                 disableIcon
                 label={item.icon}
                 variant="plain"
-                sx={{ px: 2, alignItems: "center", justifyContent: "center" }}
+                sx={{
+                  px: 2,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
                 slotProps={{
                   action: ({ checked }) => ({
                     sx: {
@@ -122,13 +200,13 @@ const handlePaymentMethodChange = (event) => {
                   width: "100%",
                   "& .MuiOutlinedInput-root": {
                     "& fieldset": {
-                      borderColor: "gray",
+                      borderColor: "#1765da !important",
                     },
                     "&:hover fieldset": {
-                      borderColor: "#024ebe",
+                      borderColor: "#1765da !important",
                     },
                     "&.Mui-focused fieldset": {
-                      borderColor: "#024ebe",
+                      borderColor: "#1765da !important",
                     },
                   },
                   "& .MuiInputBase-input::placeholder": {
@@ -147,13 +225,13 @@ const handlePaymentMethodChange = (event) => {
                   width: "100%",
                   "& .MuiOutlinedInput-root": {
                     "& fieldset": {
-                      borderColor: "gray",
+                      borderColor: "#1765da !important",
                     },
                     "&:hover fieldset": {
-                      borderColor: "#024ebe",
+                      borderColor: "#1765da !important",
                     },
                     "&.Mui-focused fieldset": {
-                      borderColor: "#024ebe",
+                      borderColor: "#1765da !important",
                     },
                   },
                   "& .MuiInputBase-input::placeholder": {
@@ -172,13 +250,13 @@ const handlePaymentMethodChange = (event) => {
                   width: "100%",
                   "& .MuiOutlinedInput-root": {
                     "& fieldset": {
-                      borderColor: "gray",
+                      borderColor: "#1765da !important",
                     },
                     "&:hover fieldset": {
-                      borderColor: "#024ebe",
+                      borderColor: "#1765da !important",
                     },
                     "&.Mui-focused fieldset": {
-                      borderColor: "#024ebe",
+                      borderColor: "#1765da !important",
                     },
                   },
                   "& .MuiInputBase-input::placeholder": {
@@ -199,7 +277,15 @@ const handlePaymentMethodChange = (event) => {
           <Typography>{t("payment.onlineText")}</Typography>
         </Box>
       )}
-      <Button style={{ marginTop: "20px" }}>Checkout</Button>
+      <Button
+        style={{
+          marginTop: "20px",
+          border: "none",
+          backgroundColor: "white !important",
+        }}
+      >
+        Order Now
+      </Button>
     </div>
   );
 };

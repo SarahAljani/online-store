@@ -102,7 +102,7 @@ const Search = ({ products, setFilteredProducts }) => {
             },
           }}
         />
-        <Accordion style={{ marginBottom: "20px" }}>
+        <Accordion style={{ marginBottom: "20px", width: "100%" }}>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1-content"
@@ -111,7 +111,12 @@ const Search = ({ products, setFilteredProducts }) => {
           >
             {t("search.filter")}
           </AccordionSummary>
-          <AccordionDetails>
+          <AccordionDetails
+            style={{
+              boxShadow: "0px 3px 10px 0px #464646b8",
+              borderRadius: "0px 0px 10px 10px",
+            }}
+          >
             <FormControl>
               <div className="lable-search">{t("search.category")}</div>
               <RadioGroup

@@ -10,7 +10,8 @@
     "availableColors": "الألوان المتاحة",
     "price": "السعر",
     "rating": "التقييم",
-    "addToCart": "إضافة إلى السلة"
+    "addToCart": "إضافة إلى السلة",
+    "removeFromCart": "إزالة من السلة"
   },
   "search": {
     "title": "ابحث عن منتجات تريدها!",
